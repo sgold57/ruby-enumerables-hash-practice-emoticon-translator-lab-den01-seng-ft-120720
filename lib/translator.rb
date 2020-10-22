@@ -10,7 +10,7 @@ def get_japanese_emoticon(file_path, emoticon)
   library = load_library(file_path)
   desired_emo = library.find{|definition, hash| emoticon == library[definition][:english]}
   if !desired_emo
-    puts "Sorry, that emoticon was not found"
+    return "Sorry, that emoticon was not found"
   else
     desired_emo[1][:japanese]
   end
