@@ -9,9 +9,9 @@ end
 def get_japanese_emoticon(file_path, emoticon)
   library = load_library(file_path)
   binding.pry
-  emoticon_meaning = library.find {|definition, hash| emoticon == definition[:english]}
+  desired_emo = library.find{|definition, hash| emoticon == definition[hash]}
   binding.pry
-  emoticon_meaning[:japanese]
+  desired_emo[:japanese]
 end
 
 def get_english_meaning
