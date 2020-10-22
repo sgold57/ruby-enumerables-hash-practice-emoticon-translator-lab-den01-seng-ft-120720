@@ -6,8 +6,10 @@ def load_library(file_path)
   library.each {|emoticon_def, emoticon_array| library[emoticon_def] = {:english => emoticon_array[0], :japanese => emoticon_array[1]}}
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file_path, emoticon)
+  library = load_library(file_path)
+  emoticon_meaning = library.find {|definition, hash| emoticon == definition[:english]}
+  emoticon_meaning[:japanese]
 end
 
 def get_english_meaning
