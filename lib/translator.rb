@@ -8,7 +8,7 @@ end
 
 def get_japanese_emoticon(file_path, emoticon)
   library = load_library(file_path)
-  desired_emo = library.find{|definition, hash| emoticon == library[definition][hash]}
+  desired_emo = library.find{|definition, hash| emoticon == library[definition][:english]}
   binding.pry
   library[desired_emo][:japanese]
 end
